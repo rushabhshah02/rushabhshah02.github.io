@@ -1,4 +1,75 @@
-h2{
-    color: aqua;
-    background-color: black;
+/* GENERAL AND HEADER/NAV STYLE*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 63%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #1f242d;
+    color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%; /* Change to 5% later*/
+    background-color: transparent; /* background: transparent; */
+    backdrop-filter: blur(40px); /* Optional */
+    /* border-bottom: 1px solid rgba(166, 166, 166, 0.242); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s ease;
+    
+}
+
+.logo:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px cyan;
+}
+
+.navheader a {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 4rem;
+    transition: color 0.4s ease-in;
+}
+
+.navheader a:hover,
+.navheader a.active {
+    color: cyan;
+}
+
+#hamburger-menu {
+    font-size: 3.5rem;
+    color: #fff;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
 }
