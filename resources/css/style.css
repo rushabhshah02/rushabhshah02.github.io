@@ -1,4 +1,4 @@
-/* GENERAL AND HEADER/NAV STYLE*/
+/* GENERAL AND HEADER/NAV STYLE */
 * {
     margin: 0;
     padding: 0;
@@ -72,4 +72,83 @@ body {
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+}
+
+/* HOME SECTION STYLE*/
+.home {
+    display: flex;
+    justify-content: space-between; /* Ensure space between text and image */
+    align-items: center;
+    gap: 5rem;
+    flex-direction: row; /* Move image to the right */
+    padding: 10rem 9% 2rem; /* Ensure proper padding */
+}
+
+.home-content {
+    flex: 1; /* Allow text to take up available space */
+}
+.my-photo {
+    flex: 1; /* Allow image to take up available space */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+}
+/* ADDED ABOVE*/
+
+.home-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.home-content h3 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.home-content h3 span {
+    color: cyan;
+}
+
+.home-content p {
+    font-size: 1.6rem; /* 25px */
+}
+
+.my-photo img {
+    position: relative;
+    width: 30vw;
+    border-radius: 15%;
+}
+
+/* .my-photo img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10%;
+} */
+
+/* HOME-BUTTONS STYLE*/
+.button {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: cyan;
+    border-radius: 40px;
+    box-shadow: 0 0 10px cyan;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background-color: seashell;
+    color: black;
 }
