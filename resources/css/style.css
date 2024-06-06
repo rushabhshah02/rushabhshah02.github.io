@@ -152,3 +152,42 @@ section {
     background-color: seashell;
     color: black;
 }
+
+/* ABOUT ME SECTION STYLE*/
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background-color: #333a44;
+
+}
+
+.my-img {
+    border-radius: 15%;
+}
+
+.my-img img {
+    position: relative;
+    width: 25vw;
+    border: 10px solid cyan;
+    border-radius: 15%;
+}
+
+.general-h2-heading {
+    text-align: center;
+    font-size: 6rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.5;
+    font-weight: 700;
+    color: cyan;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    /* line-height: 1.8; */
+    margin: 2rem 0 3rem;
+}
