@@ -241,3 +241,96 @@ section {
 .skill-box i {
     font-size: 10rem;
 }
+
+
+/* PROJECTS SECTION STYLE */
+.projects {
+    background-color: #333a44;
+}
+
+.projects h2{
+    margin-bottom: 4rem;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.project-container .project-box{
+    position: relative;
+    border-radius: 2rem;
+    /* BOX SHADOW */
+    overflow: hidden;
+    display: flex;
+}
+
+.project-box img{
+    width: 100%;
+}
+
+ .project-box:hover img{
+    transform: scale(1.1);
+}
+
+.project-box .project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    cursor: pointer;
+    opacity: 0;
+    background-color: transparent;
+    transition: opacity 0.8s ease;
+}
+
+.project-box .project-info:hover {
+    background: radial-gradient(#1f242d, cyan);
+}
+
+.project-box:hover .project-info{
+    opacity: 1;
+    background-color: #1f242d;
+}
+
+.project-info h4{
+    font-size: 3rem;
+    color: white;
+}
+
+.project-info p{
+    font-size: 1.6rem;
+    margin: 0.3rem 0 1rem;
+    color: white;
+}
+
+.project-info a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: white;
+    border-radius: 50%;
+}
+
+.project-info a i{
+    font-size: 3rem;
+    color: #333a44;
+}
+
+.projects h2{
+    margin-bottom: 5rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: cyan;
+}
