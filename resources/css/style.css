@@ -77,20 +77,20 @@ section {
 /* HOME SECTION STYLE*/
 .home {
     display: flex;
-    justify-content: space-between; /* Ensure space between text and image */
+    justify-content: space-between;
     align-items: center;
     gap: 5rem;
-    flex-direction: row; /* Move image to the right */
-    padding: 10rem 9% 2rem; /* Ensure proper padding */
+    flex-direction: row; 
+    padding: 10rem 9% 2rem; 
 }
 
 .home-content {
-    flex: 1; /* Allow text to take up available space */
+    flex: 1;
 }
 .my-photo {
-    flex: 1; /* Allow image to take up available space */
+    flex: 1;
     display: flex;
-    justify-content: flex-end; /* Align image to the right */
+    justify-content: flex-end;
 }
 /* ADDED ABOVE*/
 
@@ -333,4 +333,90 @@ section {
     line-height: 1.5;
     font-weight: 700;
     color: cyan;
+}
+
+/* CONTACT SECTION STYLE */
+.contacts h2{
+    color: cyan;
+    margin-bottom: 3rem;
+}
+
+.contacts form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacts form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.contacts form .input-box input,
+.contacts form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: cyan;
+    background:#333a44;
+    border-radius: 0.8rem;
+    margin: 1rem 0;
+    resize: none;
+}
+
+/* FOOTER STYLE */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: black;
+    text-align: center;
+}
+
+.footer .social-media-icons{
+    text-align: center;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.footer .social-media-icons a{
+    font-size: 24px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    border: 2px solid white;
+    transition: 0.5s ease;
+}
+
+.footer .social-media-icons a:hover{
+    border: 2px solid cyan;
+}
+
+.footer a {
+    color: white;
+    display: inline-block; 
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.footer a:hover {
+    border-bottom: 3px solid white;
+}
+
+.footer .right{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: white;
 }
