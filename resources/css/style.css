@@ -7,6 +7,7 @@
     outline: none;
     border: none;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -55,12 +56,14 @@ body {
     color: #fff;
     font-weight: bold;
     margin-left: 4rem;
+    border-bottom: 3px solid transparent;
     transition: color 0.4s ease-in;
 }
 
 .navheader a:hover,
 .navheader a.active {
     color: cyan;
+    border-bottom: 3px solid cyan;
 }
 
 #hamburger-menu {
@@ -121,8 +124,9 @@ section {
 
 .my-photo img {
     position: relative;
-    width: 30vw;
+    width: 29vw;
     border-radius: 15%;
+    height: auto;
 }
 
 /* .my-photo img {
@@ -143,7 +147,7 @@ section {
     letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-right: 2rem;
     transition: 0.3s ease;
 }
@@ -172,6 +176,7 @@ section {
     width: 25vw;
     border: 10px solid cyan;
     border-radius: 15%;
+    height: auto;
 }
 
 .general-h2-heading {
@@ -243,96 +248,81 @@ section {
 }
 
 
-/* PROJECTS SECTION STYLE */
+/* Projects Section */
 .projects {
+    padding: 2rem 0;
     background-color: #333a44;
 }
 
-.projects h2{
-    margin-bottom: 4rem;
-}
-
-.project-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
-}
-
-.project-container .project-box{
-    position: relative;
-    border-radius: 2rem;
-    /* BOX SHADOW */
-    overflow: hidden;
-    display: flex;
-}
-
-.project-box img{
-    width: 100%;
-}
-
- .project-box:hover img{
-    transform: scale(1.1);
-}
-
-.project-box .project-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.projects h2 {
     text-align: center;
-    padding: 0 4rem;
-    cursor: pointer;
-    opacity: 0;
-    background-color: transparent;
-    transition: opacity 0.8s ease;
-}
-
-.project-box .project-info:hover {
-    background: radial-gradient(#1f242d, cyan);
-}
-
-.project-box:hover .project-info{
-    opacity: 1;
-    background-color: #1f242d;
-}
-
-.project-info h4{
-    font-size: 3rem;
-    color: white;
-}
-
-.project-info p{
-    font-size: 1.6rem;
-    margin: 0.3rem 0 1rem;
-    color: white;
-}
-
-.project-info a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: white;
-    border-radius: 50%;
-}
-
-.project-info a i{
-    font-size: 3rem;
-    color: #333a44;
-}
-
-.projects h2{
-    margin-bottom: 5rem;
-    line-height: 1.5;
+    margin-bottom: 2rem;
     font-weight: 700;
+    line-height: 1.5;
     color: cyan;
+}
+
+.project-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #1f242d;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    max-width: 1000px;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    max-width: 250px; 
+    border-radius: 10px;
+    margin-right: 2rem; 
+    object-fit: cover;
+}
+
+.project-info {
+    flex: 1;
+    text-align: left;
+}
+
+.project-info h4 {
+    font-size: 2rem; 
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: seashell;
+}
+
+.project-info a {
+    display: inline-flex;
+    align-items: center;
+    background-color: cyan;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-info a i {
+    margin-right: 0.5rem;
+}
+
+.project-info a:hover {
+    background-color: white;
 }
 
 /* CONTACT SECTION STYLE */
