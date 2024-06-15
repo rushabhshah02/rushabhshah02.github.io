@@ -25,9 +25,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%; /* Change to 5% later*/
-    background-color: transparent; /* background: transparent; */
-    backdrop-filter: blur(40px); /* Optional */
+    padding: 3rem 9%;
+    background-color: transparent;
+    backdrop-filter: blur(40px);
     /* border-bottom: 1px solid rgba(166, 166, 166, 0.242); */
     display: flex;
     justify-content: space-between;
@@ -83,8 +83,8 @@ section {
     justify-content: space-between;
     align-items: center;
     gap: 5rem;
-    flex-direction: row; 
-    padding: 10rem 9% 2rem; 
+    flex-direction: row;
+    padding: 10rem 9% 2rem;
 }
 
 .home-content {
@@ -95,7 +95,6 @@ section {
     display: flex;
     justify-content: flex-end;
 }
-/* ADDED ABOVE*/
 
 .home-content h2 {
     font-size: 3rem;
@@ -128,12 +127,6 @@ section {
     border-radius: 15%;
     height: auto;
 }
-
-/* .my-photo img {
-    max-width: 400px;
-    height: auto;
-    border-radius: 10%;
-} */
 
 /* HOME-BUTTONS STYLE*/
 .button {
@@ -246,7 +239,6 @@ section {
 .skill-box i {
     font-size: 10rem;
 }
-
 
 /* Projects Section */
 .projects {
@@ -393,7 +385,7 @@ section {
 
 .footer a {
     color: white;
-    display: inline-block; 
+    display: inline-block;
     margin: 0 auto;
     margin-top: 15px;
     font-size: 16px;
