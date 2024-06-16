@@ -1,4 +1,20 @@
+// OPENS UP THE MENU UPON CLICKING HAMBURGER ICON
+let menuicon = document.querySelector('#hamburger-menu');
+let navhead = document.querySelector('.navheader');
+menuicon.addEventListener('click', () => {
+    menuicon.classList.toggle('bx-x');
+    navhead.classList.toggle('active');
+});
+
+// CLOSES UP THE MENU WHEN A NAVIGATION ITEM IS CLICKED
 let navLinks = document.querySelectorAll('header nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuicon.classList.remove('bx-x');
+        navhead.classList.remove('active');
+    });
+});
+
 // HIGHLIGHTS ACTIVE NAVIGATION ON PAGE WHEN SCROLLING UP OR DOWN THE SITE
 let sections = document.querySelectorAll('section');
 window.onscroll = () => {
@@ -25,3 +41,44 @@ var typed = new Typed(".animation-home", {
     backDelay: 1000,
     loop: true
 })
+
+// HANDLES CONTACT FORM RESET AND SUCCESS/FAIL MESSAGE
+document.getElementById('contacts').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = new FormData(form);
+    const action = form.action;
+    const submissionStatus = document.getElementById('submissionStatus');
+
+    fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            form.reset();
+            submissionStatus.textContent = "Message sent successfully!";
+            submissionStatus.style.color = "green";
+        }
+    }).catch(error => {
+        console.error('There was a problem submitting the form:', error);
+        submissionStatus.textContent = "An error occurred. Please try again.";
+        submissionStatus.style.color = "red";
+    });
+});
+
+// HEADER BACKGROUND TRANSITION TO SOLID COLOUR ON SCROLL
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition === 0) {
+        header.style.backgroundColor = 'transparent';
+        header.style.transition = 'background-color 0.5s ease';
+    } else {
+        header.style.backgroundColor = 'black'; // rgba(0, 0, 0, 0.8)
+        header.style.transition = 'background-color 3s ease';A
+    }
+});

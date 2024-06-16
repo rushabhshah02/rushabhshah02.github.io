@@ -348,6 +348,9 @@ section {
     margin: 1rem 0;
     resize: none;
 }
+#submissionStatus {
+    margin-top: 20px;
+}
 
 /* FOOTER STYLE */
 .footer {
@@ -401,4 +404,135 @@ section {
     text-align: center;
     font-size: 12px;
     color: white;
+}
+
+@media(max-width:1240px){
+    .home-content h3 {
+        font-size: 4rem;
+    }
+}
+
+@media(max-width:1200px){
+    html{
+        font-size: 50%;
+    }
+    .my-photo img {
+        width: 27vw;
+    }
+    .button {
+        font-size: 10px;
+    }
+}
+
+@media(max-width:991px){
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .skills{
+        padding-bottom: 7rem;
+    }
+    .projects{
+        padding-bottom: 7rem;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width:768px){
+    #hamburger-menu{
+        display: block;
+    }
+    .navheader{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: #1f242d;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.104);
+        display: none;
+    }
+    .navheader.active{
+        display: block;
+    }
+    .navheader a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home{
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .home-content h2,
+    .home-content h1{
+        font-size: 2.6rem;
+    }
+    .home-content h3{
+        font-size: 3rem;
+    }
+    .my-photo img {
+        width: 85vw;
+    }
+    .about{
+        flex-direction: column-reverse;
+    }
+    .my-img img {
+        width: 85vw;
+    }
+    .skills h2{
+        margin-bottom: 3rem;
+    }
+    .projects h2{
+        margin-bottom: 3rem;
+    }
+    .project-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-card img {
+        margin: 0 0 1rem 0;
+    }
+    .project-info h4 {
+        font-size: 1.75rem;
+    }
+    .project-info p {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:500px){
+    .project-info h4{
+        font-size: 2.7rem;
+    }
+    
+    .project-info p{
+        font-size: 1.4rem;
+    }
+
+    .project-info a i{
+        font-size: 2.7rem;
+    }
+}
+
+@media(max-width:450px){
+    .project-info h4{
+        font-size: 2.5rem;
+    }
+    
+    .project-info p{
+        font-size: 1.2rem;
+    }
+
+    .project-info a i{
+        font-size: 2.5rem;
+    }
 }
