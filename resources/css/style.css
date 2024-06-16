@@ -35,7 +35,7 @@ body {
     z-index: 100;
 }
 
-.logo {
+/* .logo {
     font-size: 3rem;
     color: #fff;
     text-decoration: none;
@@ -43,6 +43,39 @@ body {
     cursor: pointer;
     transition: 0.4s ease;
     
+}
+
+.logo:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px cyan;
+} */
+
+.logo {
+    font-size: 3rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+}
+
+.logo::after {
+    content: "<RS>";
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo:hover::after {
+    opacity: 1;
 }
 
 .logo:hover {

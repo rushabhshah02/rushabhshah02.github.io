@@ -69,16 +69,21 @@ document.getElementById('contacts').addEventListener('submit', function(event) {
     });
 });
 
-// HEADER BACKGROUND TRANSITION TO SOLID COLOUR ON SCROLL
+// HEADER TRANSITION ON SCROLL
+const header = document.querySelector('.header');
+const headerHeightOriginal = header.clientHeight;
+header.style.height = `${headerHeightOriginal}px`;
+header.style.backgroundColor = 'transparent';
+header.style.transition = 'background-color 0.3s ease-in, height 0.3s ease-in';
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
     const scrollPosition = window.scrollY;
-
     if (scrollPosition === 0) {
         header.style.backgroundColor = 'transparent';
-        header.style.transition = 'background-color 0.5s ease';
+        header.style.height = `${headerHeightOriginal}px`;
+        header.style.transition = 'background-color 0.3s ease-out, height 0.3s ease-out';
     } else {
         header.style.backgroundColor = 'black'; // rgba(0, 0, 0, 0.8)
-        header.style.transition = 'background-color 3s ease';A
+        header.style.height = `${headerHeightOriginal - 20}px`;
+        header.style.transition = 'background-color 0.3s ease-in, height 0.3s ease-in';
     }
 });
