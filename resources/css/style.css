@@ -365,6 +365,17 @@ section {
     margin: 1rem 0;
     resize: none;
 }
+
+.contacts p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    text-align: center;
+}
+.contacts p a{
+    color: #fff;
+    text-decoration: underline;
+}
+
 #submissionStatus {
     margin-top: 20px;
 }
