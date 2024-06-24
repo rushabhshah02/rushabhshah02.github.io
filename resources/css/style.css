@@ -28,7 +28,6 @@ body {
     padding: 3rem 9%;
     background-color: transparent;
     backdrop-filter: blur(40px);
-    /* border-bottom: 1px solid rgba(166, 166, 166, 0.242); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,8 +63,9 @@ body {
 
 .logo:hover {
     color: #ffffff;
-    transform: scale(1.1);
-    text-shadow: 0 0 20px cyan;
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navheader a {
@@ -107,6 +107,7 @@ section {
 .home-content {
     flex: 1;
 }
+
 .my-photo {
     flex: 1;
     display: flex;
@@ -159,12 +160,14 @@ section {
     cursor: pointer;
     margin-top: 3rem;
     margin-right: 2rem;
-    transition: 0.3s ease;
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s;
 }
 
 .button:hover {
     background-color: seashell;
     color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px cyan;
 }
 
 /* ABOUT ME SECTION STYLE*/
@@ -174,7 +177,6 @@ section {
     align-items: center;
     gap: 10rem;
     background-color: #333a44;
-
 }
 
 .my-img {
@@ -302,13 +304,13 @@ section {
 }
 
 .project-info h4 {
-    font-size: 2rem; 
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem; 
+    margin-bottom: 1rem;
     color: #ffffff;
 }
 
 .project-info p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
     color: seashell;
 }
@@ -321,8 +323,8 @@ section {
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.2s;
-    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
@@ -331,7 +333,10 @@ section {
 }
 
 .project-info a:hover {
-    background-color: white;
+    background-color: seashell;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px cyan;
 }
 
 /* CONTACT SECTION STYLE */
@@ -364,6 +369,14 @@ section {
     border-radius: 0.8rem;
     margin: 1rem 0;
     resize: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+}
+
+.contacts form .input-box input:focus,
+.contacts form textarea:focus {
+    background-color: #1f242d;
+    box-shadow: 0 0 10px cyan;
 }
 
 .contacts p {
