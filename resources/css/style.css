@@ -43,8 +43,12 @@ body {
     position: relative;
 }
 
+.logo .dot {
+    color: cyan;
+    font-weight: 1000;
+}
+
 .logo::after {
-    content: "<RS>";
     opacity: 0;
     transition: opacity 0.4s ease;
     position: absolute;
@@ -83,10 +87,33 @@ body {
     border-bottom: 3px solid cyan;
 }
 
+.navheader {
+    transition: transform 0.3s ease;
+}
+
+.navheader.active {
+    transform: translateY(0);
+}
+
 #hamburger-menu {
     font-size: 3.5rem;
     color: #fff;
     display: none;
+    cursor: pointer;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+#hamburger-menu.bx-x {
+    transform: rotate(90deg);
+}
+
+#hamburger-menu.bx-x,
+#hamburger-menu.bx-menu {
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+#hamburger-menu.active {
+    transform: rotate(90deg);
 }
 
 section {
