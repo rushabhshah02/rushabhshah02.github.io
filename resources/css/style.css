@@ -78,10 +78,13 @@ body {
     font-weight: bold;
     margin-left: 4rem;
     border-bottom: 3px solid transparent;
-    transition: color 0.4s ease-in;
+    transition: color 0.1s ease-in;
 }
 
-.navheader a:hover,
+.navheader a:hover{
+    color: cyan;
+}
+
 .navheader a.active {
     color: cyan;
     border-bottom: 3px solid cyan;
