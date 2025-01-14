@@ -44,7 +44,7 @@ body {
 }
 
 .logo .dot {
-    color: cyan;
+    color: rgb(229, 255, 0);
     font-weight: 1000;
 }
 
@@ -68,7 +68,7 @@ body {
 .logo:hover {
     color: #ffffff;
     transform: scale(1.05);
-    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    text-shadow: 0 0 15px rgb(229, 255, 0);
     transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -82,12 +82,12 @@ body {
 }
 
 .navheader a:hover{
-    color: cyan;
+    color: rgb(229, 255, 0);
 }
 
 .navheader a.active {
-    color: cyan;
-    border-bottom: 3px solid cyan;
+    color: rgb(229, 255, 0);
+    border-bottom: 3px solid rgb(229, 255, 0);
 }
 
 .navheader {
@@ -161,7 +161,7 @@ section {
 }
 
 .home-content h3 span {
-    color: cyan;
+    color: rgb(229, 255, 0);
 }
 
 .home-content p {
@@ -179,9 +179,9 @@ section {
 .button {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: cyan;
+    background-color: rgb(229, 255, 0);
     border-radius: 40px;
-    box-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 10px rgb(229, 255, 0);
     font-size: 16px;
     color: #1f242d;
     letter-spacing: 1px;
@@ -196,7 +196,7 @@ section {
     background-color: seashell;
     color: black;
     transform: scale(1.05);
-    box-shadow: 0 0 15px cyan;
+    box-shadow: 0 0 15px rgb(229, 255, 0);
 }
 
 /* ABOUT ME SECTION STYLE*/
@@ -206,6 +206,7 @@ section {
     align-items: center;
     gap: 10rem;
     background-color: #333a44;
+    padding-top: 1.5rem;
 }
 
 .my-img {
@@ -215,7 +216,7 @@ section {
 .my-img img {
     position: relative;
     width: 25vw;
-    border: 10px solid cyan;
+    border: 10px solid rgb(229, 255, 0);
     border-radius: 15%;
     height: auto;
 }
@@ -229,7 +230,7 @@ section {
     text-align: left;
     line-height: 1.5;
     font-weight: 700;
-    color: cyan;
+    color: rgb(229, 255, 0);
 }
 
 .about-content p {
@@ -239,11 +240,16 @@ section {
 }
 
 /* SKILLS SECTION STYLE */
+.skills {
+    padding-top: 1.5rem;
+    padding-bottom: 10rem;
+}
+
 .skills h2{
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     line-height: 1.5;
     font-weight: 700;
-    color: cyan;
+    color: rgb(229, 255, 0);
 }
 
 .skills-container {
@@ -251,13 +257,13 @@ section {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 1rem;
 }
 
 .skills-container .skill-box{
-    flex: 1 1 30rem;
+    flex: 1 1 19rem;
     background-color: #333a44;
-    padding: 3rem 2rem 4rem;
+    padding: 1rem 1rem 1rem;
     border-radius: 2rem;
     text-align: center;
     border: 0.2rem solid #333a44;
@@ -280,12 +286,12 @@ section {
 } */
 
 .skills-container .skill-box:hover{
-    border-color: cyan;
+    border-color: rgb(229, 255, 0);
     transform: scale(1.05);
 }
 
 .skill-box i {
-    font-size: 10rem;
+    font-size: 15rem;
 }
 
 /* Projects Section */
@@ -299,7 +305,7 @@ section {
     margin-bottom: 2rem;
     font-weight: 700;
     line-height: 1.5;
-    color: cyan;
+    color: rgb(229, 255, 0);
 }
 
 .project-card {
@@ -347,7 +353,7 @@ section {
 .project-info a {
     display: inline-flex;
     align-items: center;
-    background-color: cyan;
+    background-color: rgb(229, 255, 0);
     color: black;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
@@ -365,12 +371,12 @@ section {
     background-color: seashell;
     color: black;
     transform: scale(1.05);
-    box-shadow: 0 0 15px cyan;
+    box-shadow: 0 0 15px rgb(229, 255, 0);
 }
 
 /* CONTACT SECTION STYLE */
 .contacts h2{
-    color: cyan;
+    color: rgb(229, 255, 0);
     margin-bottom: 1rem;
 }
 
@@ -393,7 +399,7 @@ section {
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
-    color: cyan;
+    color: rgb(229, 255, 0);
     background:#333a44;
     border-radius: 0.8rem;
     margin: 1rem 0;
@@ -405,7 +411,7 @@ section {
 .contacts form .input-box input:focus,
 .contacts form textarea:focus {
     background-color: #1f242d;
-    box-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 10px rgb(229, 255, 0);
 }
 
 .contacts p {
@@ -454,8 +460,8 @@ section {
 }
 
 .footer .social-media-icons a:hover{
-    border: 2px solid cyan;
-    color: cyan;    
+    border: 2px solid rgb(229, 255, 0);
+    color: rgb(229, 255, 0);    
     transform: scale(1.3);
 }
 
@@ -469,7 +475,7 @@ section {
 }
 
 .footer a:hover {
-    border-bottom: 3px solid cyan;
+    border-bottom: 3px solid rgb(229, 255, 0);
 }
 
 .footer .right{
@@ -614,7 +620,7 @@ section {
     width: 5px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: cyan;
+    background-color: rgb(229, 255, 0);
 }
 ::-webkit-scrollbar-track{
     background-color: rgba(0, 0, 0, 0.6);
