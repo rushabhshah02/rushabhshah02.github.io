@@ -82,7 +82,7 @@ window.addEventListener('scroll', () => {
         header.style.height = `${headerHeightOriginal}px`;
         header.style.transition = 'background-color 0.3s ease-out, height 0.3s ease-out';
     } else {
-        header.style.backgroundColor = rgba(0, 0, 0, 0.8);
+        header.style.backgroundColor = 'black';
         header.style.height = `${headerHeightOriginal - 20}px`;
         header.style.transition = 'background-color 0.3s ease-in, height 0.3s ease-in';
     }
