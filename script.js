@@ -35,11 +35,12 @@ window.onscroll = () => {
 
 // TYPING ANIMATION
 var typed = new Typed(".animation-home", {
-    strings: ["Rushabh Shah", "a Developer", "a CS major"],
+    strings: ["Rushabh Shah", "a Developer", "a CS Graduate"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
+
 })
 
 // HANDLES CONTACT FORM RESET AND SUCCESS/FAIL MESSAGE
@@ -74,16 +75,25 @@ const header = document.querySelector('.header');
 const headerHeightOriginal = header.clientHeight;
 header.style.height = `${headerHeightOriginal}px`;
 header.style.backgroundColor = 'transparent';
-header.style.transition = 'background-color 0.3s ease-in, height 0.3s ease-in';
+
 window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition === 0) {
-        header.style.backgroundColor = 'transparent';
-        header.style.height = `${headerHeightOriginal}px`;
-        header.style.transition = 'background-color 0.3s ease-out, height 0.3s ease-out';
+    const scrollProgress = document.getElementById('scroll-progress-bar');
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
+});
+
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
     } else {
-        header.style.backgroundColor = 'black';
-        header.style.height = `${headerHeightOriginal - 20}px`;
-        header.style.transition = 'background-color 0.3s ease-in, height 0.3s ease-in';
+        scrollToTopBtn.classList.remove('show');
     }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

@@ -13,18 +13,21 @@
         <link rel="icon" type="image/png" sizes="16x16" href="./resources/images/favicon_package_v0.16/favicon-16x16.png">
         <link rel="manifest" href="./resources/images/favicon_package_v0.16/site.webmanifest">
         <link rel="mask-icon" href="./resources/images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body>
+        <div id="scroll-progress-bar"></div>
         <header class="header">
             <a class="logo" href="#home">Rushabh <span class="dot">.</span></a>
             <i class='bx bx-menu' id="hamburger-menu"></i>
             <nav class="navheader">
                     <a href="#home" class="active">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About</a>
                     <a href="#contacts">Contact</a>
             </nav>
         </header>
@@ -33,9 +36,9 @@
             <div class="home-content">
                 <h2>Hey world,</h2>
                 <h3>I'm <span class="animation-home"></span></h3>
-                <h1><i class='bx bx-map bx-lg'></i> Edmonton, AB, CA</h1>
-                <p>Final Year CS Spec &commat;UAlberta</p>
-                <p>Aspiring Software Engineer</p>
+                <h1><i class='fas fa-location-dot'></i> Edmonton, AB, CA</h1>
+                <h1><i class='fas fa-graduation-cap'></i> Recent graduate &commat;UAlberta</h1>
+                <h1><i class='fas fa-laptop-code'></i> Aspiring software developer</h1>
                 <a href="https://linkedin.com/in/rushabhshah02" class="button" target="_blank">Let's Connect</a>
                 <!-- <a href="#home" class="button">Download Resume</a> -->
             </div>
@@ -44,16 +47,203 @@
             </div>
         </section>
 
-        <section class="about" id="about">
+        <section id="projects" class="projects" data-aos="fade-up">
+            <h2 class="general-h2-heading">Projects</h2>
+
+            <div class="project-card alt">
+                <div class="project-image">
+                    <img src="./resources/images/bhas.png" alt="Volunteering Management Web App">
+                    <a href="https://github.com/UAlberta-CMPUT401/f24project-Bleeding-Heart-Art-Space" class="image-button" target="_blank">
+                        <i class="devicon-github-original"></i> View Project
+                    </a>
+                </div>
+                <div class="project-info">
+                    <h4>Volunteering Management Platform</h4>
+                    <p>❖ Built a custom platform for a non-profit organization to streamline volunteer scheduling, event management, and communication.</p>
+                    <p>❖ Designed a responsive frontend using React (TypeScript), implemented backend APIs using Node.js (Express with TypeScript) and PostgreSQL.</p>
+                    <p>❖ Utilized Firebase Authentication for user control and enforced endpoints with RESTful APIs for seamless data flow.</p>
+                    <p>❖ Checkout the GitHub repository to view a video demonstration of the app in the README file, showcasing it in action.</p>
+                    <div class="project-tags">
+                        <span>Node.js</span>
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./resources/images/ae.png" alt="AttendEase Project">
+                    <a href="https://github.com/rushabhshah02/AttendEase" class="image-button" target="_blank">
+                        <i class="devicon-github-original"></i> View Project
+                    </a>
+                </div>
+                <div class="project-info">
+                    <h4>AttendEase</h4>
+                    <p>❖ Developed an Android application using Java aimed at event management and attendee tracking, leveraging QR code technology for an efficient check-in system in collaboration with a team of 6.</p>
+                    <p>❖ Leveraged Firebase firestore for dynamic, real-time data updates, ensuring efficient operation.</p>
+                    <p>❖ It encompasses the Open Street Maps API for effective navigation, and XML layouts. UI storyboard and mockups for the app is designed in Figma.</p>
+                    <p>❖ Checkout the GitHub repository to view a video demonstration of the app in the README file, showcasing it in action.</p>
+                    <div class="project-tags">
+                        <span>Java</span>
+                        <span>XML</span>
+                        <span>Android Studio</span>
+                        <span>OSM API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card alt">
+                <div class="project-image">
+                    <img src="./resources/images/sud.png" alt="Sudoku Puzzle Solver">
+                    <a href="https://github.com/rushabhshah02/sudokuSolver" class="image-button" target="_blank">
+                        <i class="devicon-github-original"></i> View Project
+                    </a>
+                </div>
+                <div class="project-info">
+                    <h4>Sudoku Puzzle Solver</h4>
+                    <p>❖ Implemented a Sudoku puzzle solver as a constrained satisfaction problem using Backtracking search.</p>
+                    <p>❖ Enhanced efficiency of the Sudoku solver by 60% on average through the utilization of the Minimum Remaining Value (MRV) heuristic, directly comparing it to the First Available (FA) heuristic to guide the search process.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills" data-aos="fade-up">
+            <h2 class="general-h2-heading">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://react.dev/" target="_blank" rel="noopener">
+                        <i class="devicon-react-original-wordmark colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://nodejs.org/" target="_blank" rel="noopener">
+                        <i class="devicon-nodejs-plain-wordmark colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">
+                        <i class="devicon-typescript-plain colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://firebase.google.com/" target="_blank" rel="noopener">
+                        <i class="devicon-firebase-plain-wordmark colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.postgresql.org/" target="_blank" rel="noopener">
+                        <i class="devicon-postgresql-plain-wordmark colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.djangoproject.com/" target="_blank" rel="noopener">
+                        <i class="devicon-django-plain-wordmark"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener">
+                        <i class="devicon-flask-original-wordmark"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.oracle.com/java/" target="_blank" rel="noopener">
+                        <i class="devicon-java-plain-wordmark colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
+                        <i class="devicon-javascript-plain icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.python.org/" target="_blank" rel="noopener">
+                        <i class="devicon-python-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" rel="noopener">
+                        <i class="devicon-c-plain icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener">
+                        <i class="devicon-matlab-plain icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.mysql.com/" target="_blank" rel="noopener">
+                        <i class="devicon-mysql-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">
+                        <i class="devicon-css3-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">
+                        <i class="devicon-html5-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.mongodb.com/" target="_blank" rel="noopener">
+                        <i class="devicon-mongodb-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://julialang.org/" target="_blank" rel="noopener">
+                        <i class="devicon-julia-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://developer.android.com/studio" target="_blank" rel="noopener">
+                        <i class="devicon-androidstudio-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://git-scm.com/" target="_blank" rel="noopener">
+                        <i class="devicon-git-plain-wordmark icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://github.com/" target="_blank" rel="noopener">
+                        <i class="devicon-github-original-wordmark icon"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://www.figma.com/" target="_blank" rel="noopener">
+                        <i class="devicon-figma-plain icon colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://scikit-learn.org/" target="_blank" rel="noopener">
+                        <i class="devicon-scikitlearn-plain colored"></i>
+                    </a>
+                </div>
+                <div class="skill-box" data-aos="slide-up">
+                    <a href="https://opencv.org/" target="_blank" rel="noopener">
+                        <i class="devicon-opencv-plain-wordmark colored"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about" id="about" data-aos="fade-up">
             <div class="my-img">
                 <img src="./resources/images/me.jpg" alt="Picture of Rushabh Shah">
             </div>
             <div class="about-content">
                 <h2 class="general-h2-heading">About Me</h2>
                 <p>
-                    Welcome to my portfolio website! I'm a final-year Computer Science student at the University of Alberta 🎓 with a passion for building software that makes a difference. My journey into tech started in childhood, driven by curiosity and a love for problem-solving. Today, that passion has grown into a pursuit of software development and AI, where I enjoy turning ideas into real-world solutions.💡
+                    Welcome to my portfolio website! I'm a recent Computer Science graduate from the University of Alberta 🎓 with a passion for building software that makes a difference. My journey into tech started in childhood, driven by curiosity and a love for problem-solving. Today, that passion has grown into a pursuit of software development and AI, where I enjoy turning ideas into real-world solutions.💡
                     <br><br>
-                    Lately, I've been having fun experimenting with TypeScript, Node.js, Java, and SQL, exploring new ways to create efficient and scalable applications. I'm actively looking for internship opportunities to sharpen my skills, collaborate with talented teams, and contribute to impactful projects.
+                    Lately, I've been having fun experimenting with TypeScript, Node.js, Java, and SQL, exploring new ways to create efficient and scalable applications. I'm actively seeking full-time entry level opportunities to sharpen my skills, collaborate with talented teams, and contribute to impactful projects.
                     <br><br>
                     Beyond coding, I'm an avid sports fan whether it's football, hiking, or badminton, I love staying active. Music keeps me going, especially AfroBeats and lo-fi instrumentals, and I'm always up for a good podcast that sparks inspiration and new perspectives.
                     <br><br>
@@ -61,155 +251,8 @@
                 </p>
             </div>
         </section>
-    
-        <section id="skills" class="skills">
-            <h2 class="general-h2-heading">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-box">
-                    <i class="devicon-react-original-wordmark colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-nodejs-plain-wordmark colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-typescript-plain colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-firebase-plain-wordmark colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-postgresql-plain-wordmark colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-django-plain-wordmark"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-flask-original-wordmark"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-java-plain-wordmark colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-javascript-plain icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-python-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-c-plain icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-matlab-plain icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-mysql-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-css3-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-html5-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-mongodb-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-julia-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-androidstudio-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-git-plain-wordmark icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-github-original-wordmark icon"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-figma-plain icon colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-scikitlearn-plain colored"></i>
-                </div>
-                <div class="skill-box">
-                    <i class="devicon-opencv-plain-wordmark colored"></i>
-                </div>
-            </div>
-        </section>
 
-        <section id="projects" class="projects">
-            <h2 class="general-h2-heading">Projects</h2>
-            <div class="project-card">
-                <img src="./resources/images/bhas.png" alt="Volunteering Management Web App">
-                <div class="project-info">
-                    <h4>Volunteering Management Platform</h4>
-                    <p>❖ Built a custom platform for a non-profit organization to streamline volunteer scheduling, event management, and communication.</p>
-                    <p>❖ Designed a responsive frontend using React (TypeScript), implemented backend APIs using Node.js (Express with TypeScript) and PostgreSQL.</p>
-                    <p>❖ Utilized Firebase Authentication for user control and enforced endpoints with RESTful APIs for seamless data flow.</p>
-                    <p>❖ Checkout the GitHub repository to view a video demonstration of the app in the README file, showcasing it in action.</p>
-                    <a href="https://github.com/UAlberta-CMPUT401/f24project-Bleeding-Heart-Art-Space" target="_blank">
-                        <i class="devicon-github-original"></i> View Project
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./resources/images/ae.png" alt="AttendEase Project">
-                <div class="project-info">
-                    <h4>AttendEase</h4>
-                    <p>❖ Developed an Android application using Java aimed at event management and attendee tracking, leveraging QR code technology for an efficient check-in system in collaboration with a team of 6.</p>
-                    <p>❖ Leveraged Firebase firestore for dynamic, real-time data updates, ensuring efficient operation.</p>
-                    <p>❖ It encompasses the Open Street Maps API for effective navigation, and XML layouts. UI storyboard and mockups for the app is designed in Figma.</p>
-                    <p>❖ Checkout the GitHub repository to view a video demonstration of the app in the README file, showcasing it in action.</p>
-                    <a href="https://github.com/rushabhshah02/AttendEase" target="_blank">
-                        <i class="devicon-github-original"></i> View Project
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./resources/images/sud.png" alt="Sudoku Puzzle Solver">
-                <div class="project-info">
-                    <h4>Sudoku Puzzle Solver</h4>
-                    <p>❖ Implemented a Sudoku puzzle solver as a constrained satisfaction problem using Backtracking search.</p>
-                    <p>❖ Enhanced efficiency of the Sudoku solver by 60% on average through the utilization of the Minimum Remaining Value (MRV) heuristic, directly comparing it to the First Available (FA) heuristic to guide the search process.</p>
-                    <a href="https://github.com/rushabhshah02/sudokuSolver" target="_blank">
-                        <i class="devicon-github-original"></i> View Project
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./resources/images/mem.png" alt="Memory Game Project">
-                <div class="project-info">
-                    <h4>Memory Game</h4>
-                    <p>❖ Classic memory matching game developed in python using the pygame library</p>
-                    <a href="https://github.com/rushabhshah02/Memory-Game" target="_blank">
-                        <i class="devicon-github-original"></i> View Code
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./resources/images/pong.png" alt="Two Player Pong Project">
-                <div class="project-info">
-                    <h4>2 Player Pong</h4>
-                    <p>❖ Two player pong game developed in python using the pygame library</p>
-                    <a href="https://github.com/rushabhshah02/2-Player-Pong" target="_blank">
-                        <i class="devicon-github-original"></i> View Code
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="./resources/images/pw.png" alt="Portfolio Website">
-                <div class="project-info">
-                    <h4>Portfolio Website</h4>
-                    <p>❖ Built a responsive portfolio website using HTML, CSS, and JavaScript to showcase projects and achievements.</p>
-                    <p>❖ Utilized GitHub for version control and continuous integration, with animated text features highlighting key roles and skills.</p>
-                    <a href="https://github.com/rushabhshah02/rushabhshah02.github.io" target="_blank">
-                        <i class="devicon-github-original"></i> View Project
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacts" class="contacts">
+        <section id="contacts" class="contacts" data-aos="fade-up">
             <h2 class="general-h2-heading">Contact</h2>
             <p>Please contact me directly at <a target="_blank" href="mailto:rnshah@ualberta.ca">rnshah@ualberta.ca</a> or through this form.</p>
             <form action="https://formspree.io/f/xzbnngaa" method="POST">
@@ -218,10 +261,11 @@
                     <input type="email" placeholder="Email" name="email" required>
                 </div>
                 <div class="input-box">
-                    <input type="number" placeholder="Phone Number" name="phone" required>
                     <input type="text" placeholder="Subject" name="subject" required>
                 </div>
-                <textarea name="message" id="message" rows="10" cols="30" placeholder="Your Message" required></textarea>
+                <div class="input-box">
+                    <textarea name="message" id="message" rows="10" cols="30" placeholder="Your Message" required></textarea>
+                </div>
                 <button type="submit" class="button">
                     Submit <i class='bx bxs-paper-plane'></i>
                 </button>
@@ -236,14 +280,22 @@
                 <a target="_blank" href="mailto:rnshah@ualberta.ca"><i class='bx bx-envelope'></i></a>
             </div>
             <p>
-                <a href="#contacts">Interested in collaborating? Get in touch!</a>
+                <a class="footer-cta" href="#contacts">Interested in collaborating? Get in touch!</a>
             </p>
             <p class="right">
                 &copy; 2024 Rushabh Shah. All rights reserved.
             </p>
         </footer>
+        <button id="scrollToTopBtn" title="Back to top">
+            <i class='bx bx-chevron-up'></i>
+        </button>
     
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script src="./script.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({ duration: 1000, once: true });
+        </script>
+
     </body>
 </html>
