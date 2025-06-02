@@ -602,9 +602,10 @@ section {
         text-align: center;
     }
 
-    .skill-box {
-        flex: 0 1 45%;
-        max-width: 45%;
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .navheader {
