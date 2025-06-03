@@ -596,10 +596,19 @@ section {
     .about {
         flex-direction: column-reverse;
     }
+    
     .project-card,
     .project-card.alt {
         flex-direction: column !important;
+        text-align: left;
+    }
+
+    .project-info h4 {
         text-align: center;
+    }
+
+    .project-tags {
+        justify-content: center;
     }
 
     .skills-container {
