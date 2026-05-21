@@ -1,47 +1,90 @@
 // OPENS UP THE MENU UPON CLICKING HAMBURGER ICON
-let menuicon = document.querySelector('#hamburger-menu');
-let navhead = document.querySelector('.navheader');
+const menuicon = document.querySelector('#hamburger-menu');
+const navhead = document.querySelector('.navheader');
 menuicon.addEventListener('click', () => {
     menuicon.classList.toggle('bx-x');
     navhead.classList.toggle('active');
 });
 
 // CLOSES UP THE MENU WHEN A NAVIGATION ITEM IS CLICKED
-let navLinks = document.querySelectorAll('header nav a');
+const navLinks = document.querySelectorAll('header nav a');
+const navLinksById = {};
 navLinks.forEach(link => {
+    const id = link.getAttribute('href').replace('#', '');
+    navLinksById[id] = link;
     link.addEventListener('click', () => {
         menuicon.classList.remove('bx-x');
         navhead.classList.remove('active');
     });
 });
 
-// HIGHLIGHTS ACTIVE NAVIGATION ON PAGE WHEN SCROLLING UP OR DOWN THE SITE
-let sections = document.querySelectorAll('section');
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id')
+// CACHE SECTION OFFSETS (recomputed on resize, not on every scroll, to avoid layout thrash)
+const sections = Array.from(document.querySelectorAll('section'));
+let sectionPositions = [];
+function recalcSectionPositions() {
+    sectionPositions = sections.map(sec => ({
+        id: sec.id,
+        top: sec.offsetTop - 150,
+        bottom: sec.offsetTop - 150 + sec.offsetHeight,
+    }));
+}
+recalcSectionPositions();
+window.addEventListener('resize', recalcSectionPositions, { passive: true });
+window.addEventListener('load', recalcSectionPositions);
 
-        if (top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active')
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            })
+// CONSOLIDATED, RAF-THROTTLED SCROLL HANDLER
+const scrollProgress = document.getElementById('scroll-progress-bar');
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+let scrollTicking = false;
+let lastActiveId = null;
+
+function onScroll() {
+    const scrollTop = window.scrollY;
+
+    // Scroll progress bar
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = scrollPercent + '%';
+
+    // Scroll-to-top button visibility
+    if (scrollTop > 300) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+
+    // Active nav highlight (uses cached offsets, no layout reads)
+    for (let i = 0; i < sectionPositions.length; i++) {
+        const s = sectionPositions[i];
+        if (scrollTop >= s.top && scrollTop < s.bottom) {
+            if (lastActiveId !== s.id) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const link = navLinksById[s.id];
+                if (link) link.classList.add('active');
+                lastActiveId = s.id;
+            }
+            break;
         }
-    })
+    }
+
+    scrollTicking = false;
 }
 
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(onScroll);
+        scrollTicking = true;
+    }
+}, { passive: true });
+
 // TYPING ANIMATION
-var typed = new Typed(".animation-home", {
+new Typed(".animation-home", {
     strings: ["Rushabh Shah", "a Developer", "a CS Graduate"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
-    loop: true
-
-})
+    loop: true,
+});
 
 // HANDLES CONTACT FORM RESET AND SUCCESS/FAIL MESSAGE
 document.getElementById('contacts').addEventListener('submit', function(event) {
@@ -70,30 +113,11 @@ document.getElementById('contacts').addEventListener('submit', function(event) {
     });
 });
 
-// HEADER TRANSITION ON SCROLL
-const header = document.querySelector('.header');
-const headerHeightOriginal = header.clientHeight;
-header.style.height = `${headerHeightOriginal}px`;
-header.style.backgroundColor = 'transparent';
-
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.getElementById('scroll-progress-bar');
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-});
-
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopBtn.classList.add('show');
-    } else {
-        scrollToTopBtn.classList.remove('show');
-    }
-});
-
 scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// INITIALIZE SCROLL-REVEAL ANIMATIONS
+if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 1000, once: true, disable: 'mobile' });
+}
