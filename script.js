@@ -1,9 +1,15 @@
 // OPENS UP THE MENU UPON CLICKING HAMBURGER ICON
 const menuicon = document.querySelector('#hamburger-menu');
 const navhead = document.querySelector('.navheader');
+
+function setMenuOpen(open) {
+    menuicon.classList.toggle('active', open);
+    navhead.classList.toggle('active', open);
+    menuicon.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
 menuicon.addEventListener('click', () => {
-    menuicon.classList.toggle('bx-x');
-    navhead.classList.toggle('active');
+    setMenuOpen(!menuicon.classList.contains('active'));
 });
 
 // CLOSES UP THE MENU WHEN A NAVIGATION ITEM IS CLICKED
@@ -13,8 +19,7 @@ navLinks.forEach(link => {
     const id = link.getAttribute('href').replace('#', '');
     navLinksById[id] = link;
     link.addEventListener('click', () => {
-        menuicon.classList.remove('bx-x');
-        navhead.classList.remove('active');
+        setMenuOpen(false);
     });
 });
 
