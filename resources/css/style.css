@@ -901,36 +901,23 @@ section:not(.home)::before {
     font-size: 1.3rem;
 }
 
-#scroll-progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--warm));
-    width: 0%;
-    z-index: 9999;
-    transition: width 0.2s ease-out;
-    box-shadow: 0 0 12px var(--accent-ring);
-}
-
 #scrollToTopBtn {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    color: #ffffff;
+    background: transparent;
+    border: none;
+    color: var(--accent);
     outline: none;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     font-size: 2rem;
     cursor: pointer;
-    box-shadow: var(--shadow-accent);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.25s ease, background 0.3s, box-shadow 0.3s;
+    transition: opacity 0.3s ease, transform 0.25s ease, color 0.3s;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -938,13 +925,46 @@ section:not(.home)::before {
 
 #scrollToTopBtn:hover {
     transform: translateY(-5px);
-    background: var(--accent-hover);
-    box-shadow: 0 18px 36px -10px rgba(79, 70, 229, 0.55);
+    color: var(--accent-hover);
 }
 
 #scrollToTopBtn.show {
     opacity: 1;
     pointer-events: auto;
+}
+
+#scrollToTopBtn .progress-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+
+#scrollToTopBtn .progress-ring-track {
+    fill: none;
+    stroke: var(--accent-ring);
+    stroke-width: 3;
+}
+
+#scrollToTopBtn .progress-ring-fill {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 163.36;
+    stroke-dashoffset: 163.36;
+    transition: stroke-dashoffset 0.15s linear, stroke 0.3s;
+}
+
+#scrollToTopBtn:hover .progress-ring-fill {
+    stroke: var(--accent-hover);
+}
+
+#scrollToTopBtn i {
+    position: relative;
+    z-index: 1;
 }
 
 /* RESPONSIVENESS */

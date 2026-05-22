@@ -38,21 +38,23 @@ window.addEventListener('resize', recalcSectionPositions, { passive: true });
 window.addEventListener('load', recalcSectionPositions);
 
 // CONSOLIDATED, RAF-THROTTLED SCROLL HANDLER
-const scrollProgress = document.getElementById('scroll-progress-bar');
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+const progressRingFill = scrollToTopBtn.querySelector('.progress-ring-fill');
+const RING_CIRCUMFERENCE = 2 * Math.PI * 26;
 let scrollTicking = false;
 let lastActiveId = null;
 
 function onScroll() {
     const scrollTop = window.scrollY;
 
-    // Scroll progress bar
+    // Scroll progress ring around the back-to-top button
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    scrollProgress.style.width = scrollPercent + '%';
+    const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+    progressRingFill.style.strokeDashoffset =
+        RING_CIRCUMFERENCE * (1 - scrollPercent);
 
     // Scroll-to-top button visibility
-    if (scrollTop > 300) {
+    if (scrollTop > 100) {
         scrollToTopBtn.classList.add('show');
     } else {
         scrollToTopBtn.classList.remove('show');

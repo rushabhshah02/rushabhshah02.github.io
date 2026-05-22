@@ -26,7 +26,6 @@
         <meta name="theme-color" content="#f6f3ec">
     </head>
     <body>
-        <div id="scroll-progress-bar"></div>
         <header class="header">
             <a class="logo" href="#home">Rushabh <span class="dot">.</span></a>
             <button id="hamburger-menu" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -296,7 +295,11 @@
                 &copy; 2026 Rushabh Shah. All rights reserved.
             </p>
         </footer>
-        <button id="scrollToTopBtn" title="Back to top">
+        <button id="scrollToTopBtn" title="Back to top" aria-label="Scroll to top">
+            <svg class="progress-ring" viewBox="0 0 60 60" aria-hidden="true">
+                <circle class="progress-ring-track" cx="30" cy="30" r="26"></circle>
+                <circle class="progress-ring-fill" cx="30" cy="30" r="26"></circle>
+            </svg>
             <i class='bx bx-chevron-up'></i>
         </button>
     
