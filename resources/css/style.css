@@ -99,6 +99,7 @@ body::before {
 }
 
 .logo .dot {
+    font-family: var(--font-display);
     color: var(--accent);
 }
 
