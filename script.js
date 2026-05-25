@@ -128,3 +128,112 @@ scrollToTopBtn.addEventListener('click', () => {
 if (typeof AOS !== 'undefined') {
     AOS.init({ duration: 1000, once: true, disable: 'mobile' });
 }
+
+// CERTIFICATIONS: 3D TILT + CURSOR-TRACKED GLOW
+const certCards = document.querySelectorAll('.cert-card');
+const supportsTilt =
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TILT_MAX = 6;
+
+if (supportsTilt) {
+    certCards.forEach(card => {
+        const inner = card.querySelector('.cert-card-inner');
+        if (!inner) return;
+
+        card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width;
+            const py = (e.clientY - r.top) / r.height;
+            const rx = (0.5 - py) * TILT_MAX;
+            const ry = (px - 0.5) * TILT_MAX;
+            inner.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+            card.style.setProperty('--mx', `${(px * 100).toFixed(2)}%`);
+            card.style.setProperty('--my', `${(py * 100).toFixed(2)}%`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            inner.style.transform = '';
+        });
+    });
+}
+
+// CERTIFICATIONS: LIGHTBOX
+const certLightbox = document.getElementById('cert-lightbox');
+if (certLightbox && certCards.length > 0) {
+    const lbImg = certLightbox.querySelector('.cert-lightbox-img');
+    const lbCaption = certLightbox.querySelector('.cert-lightbox-caption');
+    const lbClose = certLightbox.querySelector('.cert-lightbox-close');
+    const lbPrev = certLightbox.querySelector('.cert-lightbox-prev');
+    const lbNext = certLightbox.querySelector('.cert-lightbox-next');
+
+    const certData = Array.from(certCards).map(c => ({
+        src: c.dataset.certSrc,
+        title: c.dataset.certTitle || ''
+    }));
+
+    let currentIdx = 0;
+    let lastFocused = null;
+
+    function renderCert() {
+        const cert = certData[currentIdx];
+        if (!cert) return;
+        lbImg.src = cert.src;
+        lbImg.alt = cert.title;
+        lbCaption.textContent = cert.title;
+    }
+
+    function openLightbox(i) {
+        currentIdx = i;
+        lastFocused = document.activeElement;
+        renderCert();
+        certLightbox.classList.add('is-open');
+        certLightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+    }
+
+    function closeLightbox() {
+        certLightbox.classList.remove('is-open');
+        certLightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            lastFocused.focus();
+        }
+    }
+
+    function step(delta) {
+        if (certData.length === 0) return;
+        currentIdx = (currentIdx + delta + certData.length) % certData.length;
+        renderCert();
+    }
+
+    certCards.forEach((card, i) => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.image-button')) return;
+            openLightbox(i);
+        });
+        card.addEventListener('keydown', (e) => {
+            if (e.target !== card) return;
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(i);
+            }
+        });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => step(-1));
+    lbNext.addEventListener('click', () => step(1));
+
+    certLightbox.addEventListener('click', (e) => {
+        if (e.target === certLightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!certLightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+    });
+}

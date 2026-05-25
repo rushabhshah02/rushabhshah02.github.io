@@ -36,6 +36,7 @@
             <nav class="navheader">
                     <a href="#home" class="active">Home</a>
                     <a href="#projects">Projects</a>
+                    <a href="#certifications">Certifications</a>
                     <a href="#skills">Skills</a>
                     <a href="#about">About</a>
                     <a href="#contacts">Contact</a>
@@ -117,6 +118,43 @@
                     <p>❖ Enhanced efficiency of the Sudoku solver by 60% on average through the utilization of the Minimum Remaining Value (MRV) heuristic, directly comparing it to the First Available (FA) heuristic to guide the search process.</p>
                     <div class="project-tags">
                         <span>Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="certifications" data-aos="fade-up">
+            <h2 class="general-h2-heading">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card" role="button" tabindex="0"
+                     aria-label="Open Google Data Analytics Specialization Certificate"
+                     data-cert-src="./resources/images/certs/google-data-analytics.webp"
+                     data-cert-title="Google Data Analytics Specialization Certificate">
+                    <div class="cert-card-inner">
+                        <div class="cert-image">
+                            <img src="./resources/images/certs/google-data-analytics.webp"
+                                 alt="Google Data Analytics Specialization Certificate"
+                                 loading="lazy" decoding="async">
+                            <span class="cert-glow" aria-hidden="true"></span>
+                            <a href="https://www.codecademy.com/profiles/rushabh_shah02/certificates/d3f89367b558583e361640f778191345" class="image-button" target="_blank" rel="noopener"><i class='bx bx-link-external'></i><span>View Credentials</span></a>
+                        </div>
+                        <h4 class="cert-title">Google Data Analytics Specialization</h4>
+                    </div>
+                </div>
+
+                <div class="cert-card" role="button" tabindex="0"
+                     aria-label="Open Codecademy Java Certificate"
+                     data-cert-src="./resources/images/certs/codecademy-java.webp"
+                     data-cert-title="Java">
+                    <div class="cert-card-inner">
+                        <div class="cert-image">
+                            <img src="./resources/images/certs/codecademy-java.webp"
+                                 alt="Codecademy Java Certificate"
+                                 loading="lazy" decoding="async">
+                            <span class="cert-glow" aria-hidden="true"></span>
+                            <a href="https://www.codecademy.com/profiles/rushabh_shah02/certificates/d3f89367b558583e361640f778191345" class="image-button" target="_blank" rel="noopener"><i class='bx bx-link-external'></i><span>View Credentials</span></a>
+                        </div>
+                        <h4 class="cert-title">Java</h4>
                     </div>
                 </div>
             </div>
@@ -314,7 +352,17 @@
             </svg>
             <i class='bx bx-chevron-up'></i>
         </button>
-    
+
+        <div id="cert-lightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Certificate viewer">
+            <button type="button" class="cert-lightbox-close" aria-label="Close certificate viewer">&times;</button>
+            <button type="button" class="cert-lightbox-prev" aria-label="Previous certificate">&#8249;</button>
+            <button type="button" class="cert-lightbox-next" aria-label="Next certificate">&#8250;</button>
+            <figure class="cert-lightbox-figure">
+                <img class="cert-lightbox-img" src="" alt="">
+                <figcaption class="cert-lightbox-caption"></figcaption>
+            </figure>
+        </div>
+
         <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script defer src="./script.js"></script>
